@@ -16,4 +16,5 @@ const Button = (props) => {
   );
 };
 
-export default React.memo(Button);
+export default React.memo(Button);  //React.memo keeps button component from re-rendering due to parent re-render
+                                    //unless props change

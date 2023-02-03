@@ -6,4 +6,4 @@ function DemoOutput (props) {
     return <MyParagraph>{props.show ? 'This is new!' : ''}</MyParagraph>;
 };
 
-export default React.memo(DemoOutput);
+export default React.memo(DemoOutput);  //React.memo keeps the component from re-rendering due to a parent re-render unless props change

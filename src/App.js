@@ -9,7 +9,7 @@ function App() {
 
   console.log('App Running');
 
-  const toggleParagraphHandler = useCallback(() => {
+  const toggleParagraphHandler = useCallback(() => {    //useCallback retains original function between re-renders
     if (allowToggle) {
       setShowParagraph((prevShowParagraph) => !prevShowParagraph);  //this function form is recommended for updating the state where you may rely on the previous state snapshot
     }                                                               //this is because of state change scheduling where the state update may not happen instantly
@@ -30,3 +30,6 @@ function App() {
 }
 
 export default App;
+
+//One button component will re-render when App re-renders, the other will not
+//because useCallback was used on one of the onClick handlers, but not the other

@@ -28,7 +28,6 @@ function App() {
         };
       });
       setMovies(transformedMovies);
-      setIsLoading(false);  
     } catch (error) {
       setError(error.message);
     }
@@ -37,14 +36,10 @@ function App() {
 
   useEffect(() => {                 //we can use useEffect to cause the app to fetch data from the API when the app first loads
     fectchMoviesHandler();
-  }, [fectchMoviesHandler]);        //we should include the handler function as a dependency just in case the function contains some kind of external state
+  }, [fectchMoviesHandler]);        //we should include the handler function as a dependency just in case the handler function contains some kind of external state
 
   let content = <p>Found no movies.</p>;
-  
-  if (movies.length === 0) {
-    content = <p>Found no movies</p>;
-  }
-  
+    
   if (movies.length > 0) {
     content = <MoviesList movies={movies} />;
   }
